@@ -1,0 +1,14 @@
+# Node/IDE/os junk
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Build outputs (none currently)
+dist/
+build/
+
+# Env/keys
+.env
+.env.*

@@ -1,0 +1,22 @@
+# إعدادات نشر بسيطة لموقع ثابت
+[build]
+  publish = "."
+  command = ""
+
+# تفعيل ضغط Brotli/Gzip عبر Netlify تلقائياً
+# ضبط كاش بسيط للملفات الثابتة
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=600"
+
+# أنواع MIME لأيقونات الخطوط إن لزم
+[[headers]]
+  for = "/**.css"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+
+[[headers]]
+  for = "/**.js"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"

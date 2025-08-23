@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>بروفايلي - روابط سريعة</title>
+  <meta name="description" content="قالب صفحة روابط (Link in Bio) بتصميم زجاجي وتأثيرات أنيميشن جميلة" />
+  <meta name="theme-color" content="#0b0f19" />
+  <meta property="og:title" content="Mohammed Reza - روابط" />
+  <meta property="og:description" content="مصمم جرافيك | طالب مبرمج مواقع" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="avatar.jpg.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Welcome Overlay -->
+  <div id="welcomeOverlay" role="dialog" aria-label="Welcome overlay">
+    <div class="welcome-box">
+      <h2 class="welcome-title" id="welcomeSplitText" lang="en" dir="ltr">Welcome to Mohammed Reza's CV</h2>
+    </div>
+  </div>
+  <canvas id="bg"></canvas>
+  <main class="container">
+    <header class="header glass" id="header">
+      <div class="cover" aria-hidden="true" style="background-image:url('banner.jpg.jpg'); background-size:cover; background-position:center;"></div>
+      <button class="btn icon theme-toggle banner-toggle" id="themeToggle" title="تبديل السمة" aria-label="Toggle theme">
+        <i class="ri-moon-clear-line"></i>
+      </button>
+      <div class="avatar-wrap">
+        <img class="avatar" src="avatar.jpg.jpg" alt="الصورة الشخصية" width="96" height="96" loading="eager" />
+      </div>
+      <div class="title-row">
+        <div class="goo-filter-container">
+          <canvas class="pixel-canvas" aria-hidden="true"></canvas>
+          <h1 class="name" dir="ltr" lang="en" aria-label="Name"><bdi class="ltr-name">Mohammed Reza</bdi></h1>
+        </div>
+      </div>
+      <ul class="bio-list" aria-label="Bio">
+        <li>Passionate about design and coding</li>
+        <li>Improving daily in web and graphic design</li>
+        <li>Creating ideas and solutions on phone and PC</li>
+      </ul>
+      <div class="badges">
+        <span class="chip">Graphic Design</span>
+        <span class="chip">Frontend Development</span>
+        <span class="chip">Programming Student</span>
+      </div>
+      <ul class="socials">
+        <li><a class="icon" href="https://t.me/rezaiqq" target="_blank" rel="noopener" aria-label="Telegram"><i class="ri-telegram-line"></i></a></li>
+        <li><a class="icon" href="https://www.instagram.com/tvt_2?igsh=MWNvdTlxdnBvMHdieg==" target="_blank" rel="noopener" aria-label="Instagram"><i class="ri-instagram-line"></i></a></li>
+        <li><a class="icon" href="https://www.facebook.com/share/1JeNiK5Y5w/" target="_blank" rel="noopener" aria-label="Facebook"><i class="ri-facebook-circle-line"></i></a></li>
+      </ul>
+    </header>
+
+    <section class="links">
+      <a class="card link ripple" href="https://rayza-store-a3qy.vercel.app/#contact" target="_blank" rel="noopener">
+        <div class="icon-thumb">
+          <img class="logo" src="store-logo.jpg.jpg" alt="شعار المتجر" width="60" height="60" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1520975922284-7b683d9211f8?q=80&w=240&auto=format&fit=crop';"/>
+        </div>
+        <div class="meta">
+          <h3>متجري</h3>
+          <p>تواصل وطلبات عبر الصفحة</p>
+        </div>
+        <span class="cta"><i class="ri-arrow-right-up-line"></i></span>
+      </a>
+
+      
+
+      <div class="grid">
+        <!-- تم تحويل الأزرار إلى بطاقات كاملة بنفس تصميم الكرت العلوي -->
+        <a class="card link ripple" id="showQR">
+          <div class="icon-thumb">
+            <i class="ri-qr-code-line"></i>
+          </div>
+          <div class="meta">
+            <h3>عرض QR</h3>
+            <p>رمز سريع لمشاركة الرابط</p>
+          </div>
+          <span class="cta"><i class="ri-arrow-right-up-line"></i></span>
+        </a>
+
+        <a class="card link ripple" id="copyLink">
+          <div class="icon-thumb">
+            <i class="ri-links-line"></i>
+          </div>
+          <div class="meta">
+            <h3>نسخ الرابط</h3>
+            <p>انسخ رابط هذه الصفحة</p>
+          </div>
+          <span class="cta"><i class="ri-arrow-right-up-line"></i></span>
+        </a>
+      </div>
+      
+      <div class="modal" id="qrModal" aria-hidden="true" role="dialog" aria-label="رمز الاستجابة السريع">
+        <div class="modal-backdrop" id="qrBackdrop"></div>
+        <div class="modal-content glass">
+          <img id="qrImg" alt="QR للرابط" width="220" height="220"/>
+          <button class="btn icon" id="closeQR" aria-label="إغلاق"><i class="ri-close-line"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>Designed by Mohammed Reza © 2025</small>
+    </footer>
+  </main>
+
+  <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="script.js"></script>
+  <script src="fluid-cursor.js" defer></script>
+  <script src="faulty-terminal.js" defer></script>
+  <script src="light-rays.js" defer></script>
+  <script src="letter-glitch.js"></script>
+</body>
+</html>
